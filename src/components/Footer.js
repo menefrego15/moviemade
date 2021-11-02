@@ -54,13 +54,13 @@ function Footer() {
     <Container>
       <ButtonContainer>
         <ButtonCancel>
-          <img src={cross} />
+          <img src={cross} alt="cross" />
         </ButtonCancel>
         <ButtonHeart>
-          <img src={heart} />
+          <img src={heart} alt="heart" />
         </ButtonHeart>
         <ButtonCheck>
-          <img src={check} />
+          <img src={check} alt="check" />
         </ButtonCheck>
       </ButtonContainer>
     </Container>

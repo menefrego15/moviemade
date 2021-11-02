@@ -15,7 +15,7 @@ const Header = styled.div`
 function header() {
   return (
     <Header>
-      <img src={Icon} />
+      <img src={Icon} alt="nav icon" />
       <Avatar />
     </Header>
   );

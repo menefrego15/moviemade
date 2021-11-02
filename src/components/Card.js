@@ -1,30 +1,12 @@
 import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
 import styled from "styled-components";
-import movie1 from "../assets/movie1.jpeg";
-import movie3 from "../assets/movie3.jpeg";
-import movie2 from "../assets/movie2.jpeg";
 
 const CardImage = styled.div`
   width: 300px;
   height: 450px;
   border-radius: 30px;
 `;
-
-const Cards = [
-  {
-    name: "Kingsman",
-    img: movie3,
-  },
-  {
-    name: "Very Bad Trip",
-    img: movie1,
-  },
-  {
-    name: "Jumanji",
-    img: movie2,
-  },
-];
 
 const CardsDiv = styled.div`
   position: absolute;
@@ -49,7 +31,7 @@ function Card() {
     if (lastDirection === "right") {
       setPickMovies([...pickMovies, movies]);
     }
-  }, [movies]);
+  }, [movies, lastDirection, pickMovies]);
 
   useEffect(() => {
     console.log(pickMovies);
@@ -1362,9 +1344,11 @@ function Card() {
 
   useEffect(() => {
     let List = [];
-    for (let i = 0; i < 10; i++) {
-      const random = Math.floor(Math.random() * 100 - 1);
-      List.push(Movies.items[random]);
+    if (Movies.items.length > 0) {
+      for (let i = 0; i < 10; i++) {
+        const random = Math.floor(Math.random() * 100 - 1);
+        List.push(Movies.items[random]);
+      }
     }
     setmoviesList(List);
   }, []);
