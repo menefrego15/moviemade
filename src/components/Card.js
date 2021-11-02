@@ -1342,7 +1342,7 @@ function Card() {
     errorMessage: "",
   };
 
-  useEffect(() => {
+  const fetchRandom = () => {
     let List = [];
     if (Movies.items.length > 0) {
       for (let i = 0; i < 10; i++) {
@@ -1350,7 +1350,13 @@ function Card() {
         List.push(Movies.items[random]);
       }
     }
+    return List;
+  };
+
+  useEffect(() => {
+    let List = fetchRandom();
     setmoviesList(List);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (moviesList.length >= 1) {
